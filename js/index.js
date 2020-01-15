@@ -206,7 +206,9 @@ if(ans.includes("yes") || ans.includes("ya") || ans.includes("y")
 //all btns on the page 
 
 
-//preventDefaults & 
+//preventDefaults & propagation
+
+let page = document.querySelector("html")
 pars.forEach(pz=>{
     pz.addEventListener("mouseover" ,redBox)//11
     //12
@@ -227,7 +229,7 @@ pars.forEach(pz=>{
 
     pz.addEventListener("dblclick" ,function (el){
 el.stopPropagation()
-        let page = document.querySelector("html")
+       
         
         page.style.display='none'
     
@@ -240,6 +242,7 @@ el.stopPropagation()
     
     })
 })
+//preventDefaults & propagation
 
 
 
@@ -264,3 +267,54 @@ function aChill(el){
 }
 
 //a links
+
+
+
+//gsap attemps
+
+fbLogo_in_heading.addEventListener("mouseenter", ()=>{
+        gsap.to(fbLogo_in_heading,{
+            scale:1.2,
+            duration:1,
+            yoyo:true,
+            repeat:1
+        })
+})
+
+fbLogo_in_heading.addEventListener("mousedown", ()=>{
+    gsap.to(fbLogo_in_heading,{
+        scale:1,
+    })
+})
+
+
+
+allH2s.forEach(h2=>{
+    h2.addEventListener("mouseenter", ()=>{
+    gsap.to(h2,{
+        rotationX:360,
+        duration:1,
+        yoyo:true,
+        repeat:1
+    })
+})
+
+})
+
+everyImg.forEach(img=>{
+    img.addEventListener("mouseenter",()=>{
+            gsap.to(img,{
+                scale:1.3,
+                filter:blur(3)
+            })
+    })
+})
+everyImg.forEach(img=>{
+    img.addEventListener("mouseout",()=>{
+            gsap.to(img,{
+                scale:1,
+
+            })
+    })
+})
+//gsap attemps
